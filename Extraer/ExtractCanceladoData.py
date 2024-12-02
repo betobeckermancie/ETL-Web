@@ -22,7 +22,7 @@ all_data=[] #Lista para guardar toda la data
 
 #ruta para guardar en databricks
 output_dir  = "/dbfs/mnt/PagWeb"
-output_file = os.path.join(output_dir, "Cancelado_web_csv")
+output_file = os.path.join(output_dir, "Cancelados_web_csv")
 
 #Crear la ruta si no existe
 if not os.path.exists(output_file):
