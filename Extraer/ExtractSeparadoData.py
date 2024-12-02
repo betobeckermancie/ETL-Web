@@ -1,10 +1,19 @@
-#se extrae toda la data cruda sin limites de datos para mejor analisis
+#GET - https://api.casaspecsa.com/api/venta/all-transacciones
+#SI QUIERE TRAER SOLO LAS TRANSACCIONES YA SEA VENDIDAS, SEPARADAS(O INICIADAS) O CANCELADAS AGREGAR estatus COMO VARIABLE 
+
+#valores aceptados: 
+#<"Vendido" || "Cancelado" || "Separado" || "Iniciado">
+
+#ejemplo:
+#GET - https://api.casaspecsa.com/api/venta/all-transacciones?estatus=Vendido
+
+#se extrae solo la data relacionada a pagos y separaciones para hacer un analisis mas minucioso
 import requests
 import pandas as pd
 import os
 
 #URL base de la api(traer toda la info existente)
-BASE_URL ="https://api.casaspecsa.com/api/venta/all-transacciones"
+BASE_URL ="https://api.casaspecsa.com/api/venta/all-transacciones?estatus=Separado"
 
 #Parametros iniciales
 limit = 10 #numero de registros que se taera por pagina
@@ -13,7 +22,7 @@ all_data=[] #Lista para guardar toda la data
 
 #ruta para guardar en databricks
 output_dir  = "/dbfs/mnt/PagWeb"
-output_file = os.path.join(output_dir, "all-transacciones_web_csv")
+output_file = os.path.join(output_dir, "sepraciones_web_csv")
 
 #Crear la ruta si no existe
 if not os.path.exists(output_file):
