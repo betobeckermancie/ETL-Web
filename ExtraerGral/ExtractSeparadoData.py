@@ -65,5 +65,5 @@ df=pd.DataFrame(all_data)#se guardan aqui
 
 #guardar los datos en un archivo csv en databricks
 df.to_csv(output_file, index=False)
-print(f"Datos exportaos a {output_file}")
+print(f"Datos exportados a {output_file}")
 
