@@ -30,5 +30,7 @@ df_final = pd.concat([df.drop('asesor', axis =1), df_expanded], axis=1)
 
 #Guardar el archivo resultante
 output_path = "/dbfs/mnt/PagWeb/Extract/vendidos_web_asesorExpanded.csv"
+df_final.to_csv(output_path, index=False)
+print(f"Datos expandidos guardados en: {output_path}")
 
 display(df_final)
