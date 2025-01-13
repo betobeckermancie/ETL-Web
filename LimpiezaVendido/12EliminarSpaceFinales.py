@@ -6,7 +6,7 @@ df['cliente_nombreCompleto'] = df['cliente_nombreCompleto'].str.rstrip('_')
 df['lote_manzana_etapa_fraccionamiento_nombre'] = df['lote_manzana_etapa_fraccionamiento_nombre'].str.rstrip('_')
 
 # Guardar el DataFrame actualizado en un nuevo archivo CSV
-df.to_csv("/dbfs/mnt/PagWeb/Extract/archivo_sin_guion_bajo.csv", index=False)
+df.to_csv("/dbfs/mnt/PagWeb/Extract/separados_web_AllClean.csv", index=False)
 
 # Mostrar el DataFrame actualizado
 display(df)
