@@ -2,7 +2,7 @@
 df = pd.read_csv("/dbfs/mnt/PagWeb/Extract/Separados/separados_web_guionesBajos.csv")
 
 # Lista de columnas a modificar
-columnas_a_modificar = ['asesor_nombre', 'cliente_nombreCompleto', 'lote_manzana_etapa_fraccionamiento_nombre'] #se agregan las columnas necesarias
+columnas_a_modificar = ['asesor_nombre', 'cliente_nombreCompleto'] #se agregan las columnas necesarias
 
 # Reemplazar espacios por guiones bajos en las columnas seleccionadas
 for columna in columnas_a_modificar:
